@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700&display=swap" rel="stylesheet">
+  
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <title>Rock, Paper, Scissors</title>
+  
+    <script src="js/index.js"></script>
+  
+  </head>
+  <body>
+    <div class="cover">
+      <div class="header"> 
+          <div class="title">
+              <img src='images/logo.svg' />
+          </div>
+          <div class="score">
+              <p>SCORE</p>
+              <h1> 0 </h1>
+          </div>
+      </div>
+      <div class="hands">
+            <div class="hold paper">
+              <img src="images/icon-paper.svg" onclick='pickUserHand("paper")'/>
+            </div>
+            <div class="hold scissors">
+              <img src="images/icon-scissors.svg" onclick='pickUserHand("scissors")'/>
+            </div>
+            <div class="hold rock">
+              <img src="images/icon-rock.svg" onclick='pickUserHand("rock")'/>                        
+            </div>
+      </div>
+      <div class="contest">       
+        <div class="userhand">
+            <h1>YOU PICKED</h1>
+            <div id="handImageHolder1" >
+              <img  id="userPickImage" src="images/icon-paper.svg"/>
+            </div>
+        </div>
+        <div class="result"> 
+            <div class="decision"><h1> YOU WIN! </h1></div>
+            <div class="newGame" onclick="restartGame()">PLAY AGAIN</div>
+        </div>
+        <div class="computerhand">
+            <h1>THE HOUSE PICKED</h1>
+            <div id="handImageHolder2" >
+              <img id="computerPickImage" src="images/icon-scissors.svg" /> 
+            </div>   
+        </div>       
+      </div>   
+      <div id="btn-holder">
+        <button class="button" id="btn">RULES</button>
+      </div>
+      
+      <div id="rules-modal" class="modal">
+          <h1>RULES</h1>
+          <span class="close">&times;</span>
+          <img src="images/image-rules.svg"/>
+      </div>
+                    
+    </div>
+    <script>
+      //Script to interact with the Rules Modal 
+
+      var modal = document.getElementById("rules-modal");
+      var butn = document.getElementById("btn");
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks the button, open the modal 
+      butn.onclick = function() {
+        modal.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      }
+
+    </script>
+    
+  </body>
+</html>

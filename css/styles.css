@@ -1,0 +1,257 @@
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+
+.cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  
+}
+
+.header {
+  width: 700px;
+  height: 150px;
+  border-radius: 15px;
+  border: 1.5px solid hsl(217, 16%, 45%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.title {
+  padding-left: 30px;
+}
+
+.score {
+  width: 150px;
+  height: 114px;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 8px;
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.score h1 {
+  color: hsl(229, 25%, 31%);
+  font-size: 56px;
+  font-family: "Barlow", sans-serif;
+}
+
+.score p {
+  color: hsl(229, 64%, 46%);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: 2.5px;
+  text-align: left;
+}
+.hands .rock {
+  border: 8px solid hsl(349, 70%, 56%) ;
+  
+  box-shadow: 0px 5px hsl(349, 71%, 52%), 0px 6px rgb(206, 192, 192) inset ;
+  margin-right: 30px;
+  margin-top: 40px;
+}
+.hands .paper {
+  border: 8px solid hsl(230, 89%, 65%);
+  
+  box-shadow: 0px 5px hsl(230, 89%, 62%), 0px 6px rgb(206, 192, 192) inset;
+  margin-right: 70px;
+  
+}
+.hands .scissors {
+  border: 8px solid hsl(40, 84%, 53%);
+  
+  box-shadow: 0px 5px hsl(39, 89%, 49%), 0px 6px rgb(206, 192, 192) inset;
+  margin-left: 60px;
+ 
+}
+
+.hands .hold {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.20s ;
+
+}
+.hands .hold:hover{
+  transform: translate3d(0px, -6px, 0px);
+}
+.hands {
+  background-image: url("../images/bg-triangle.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  visibility: visible;
+  opacity: 1;
+  position: relative;
+  width: 476px;
+  height: 430px;
+  margin-top: 100px;
+  display: flex;
+  z-index: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.contest {
+  display: none;
+  margin-top: 50px;
+  width: 900px;
+}
+
+.contest img {
+  width: 120px;
+  height: 120px;
+}
+
+.contest > div {
+  flex: 1;
+}
+
+.contest h1 {
+  color: white;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.contest .newGame {
+  color: hsl(229, 25%, 31%);
+  background-color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.newGame:hover {
+  background: rgb(218, 218, 218);
+  transform: translate3d(0px, -2px, 0px);
+  color: hsl(349, 71%, 52%);
+}
+
+.contest #handImageHolder1, .contest #handImageHolder2  {
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contest .rock {
+  border: 20px solid hsl(349, 70%, 56%) ;
+  
+  box-shadow: 0px 10px hsl(349, 71%, 52%), 0px 8px rgb(206, 192, 192) inset ;
+} 
+
+.contest .paper {
+  border: 20px solid hsl(230, 89%, 65%);
+  
+  box-shadow: 0px 10px hsl(230, 89%, 62%), 0px 8px rgb(206, 192, 192) inset;
+  
+}
+
+.contest .scissors {
+  border: 20px solid hsl(40, 84%, 53%);
+  
+  box-shadow: 0px 10px hsl(39, 89%, 49%), 0px 8px rgb(206, 192, 192) inset;
+  
+}
+.result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.result h1 {
+  font-size: 45px;
+  color: white;
+}
+
+.computerhand {
+  display: flex;
+  flex-direction: column;
+}
+.button {
+  background-color :transparent;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10%;
+  border: 2px solid hsl(229, 25%, 31%);
+  display: inline-block;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: hsl(228, 83%, 77%) ;
+  color: hsl(229, 25%, 31%);
+  font-size: large;
+  border: none;
+}
+
+#btn-holder {
+  position: fixed;
+  bottom: 4px;
+  right: 10px;
+}
+
+/* Modal to display the game rules */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index:1;
+  margin-top: 30%;
+  width: 400px;
+  height: 400px;
+  background-color: hsl(219, 30%, 89%);
+  text-align: center;
+  padding: 50px;
+}
+.modal h1{
+  float: left;
+  font-size: large;
+  color: rgb(68, 67, 67);
+  font-weight: bolder;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: rgb(68, 67, 67);
+  text-decoration: none;
+  cursor: pointer;
+}
